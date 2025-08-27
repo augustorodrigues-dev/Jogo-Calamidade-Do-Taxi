@@ -17,7 +17,6 @@ public class PegarLanterna : MonoBehaviour
         {
             podePegar = true;
             lanternaNoChao = this.gameObject; 
-            Debug.Log("Player entrou na área da lanterna. Pressione 'E' para pegar.");
             
         }
     }
@@ -29,7 +28,7 @@ public class PegarLanterna : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             podePegar = false;
-            Debug.Log("Player saiu da área da lanterna.");
+            
             
         }
     }
@@ -59,6 +58,5 @@ public class PegarLanterna : MonoBehaviour
             Destroy(lanternaNoChao);
         }
         
-        Debug.Log("Lanterna pega!");
     }
 }
