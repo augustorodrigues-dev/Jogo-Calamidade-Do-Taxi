@@ -5,8 +5,8 @@ public class PassosPlayer : MonoBehaviour
     [SerializeField] private AudioSource somPassosSource;
     [SerializeField] private CharacterController characterController;
 
-    // --- NOVAS VARIÁVEIS ---
-    [Header("Sons de Passos")] // Cria um título no Inspector para organizar
+    
+    [Header("Sons de Passos")] 
     [SerializeField] private AudioClip somAndando;
     [SerializeField] private AudioClip somCorrendo;
 
@@ -22,24 +22,22 @@ public class PassosPlayer : MonoBehaviour
 
     void Update()
     {
-        // A condição principal continua a mesma: está no chão e se movendo?
+        
         if (characterController.isGrounded && characterController.velocity.magnitude > 0.1f)
         {
-            // --- NOVA LÓGICA ---
-            // Agora, verificamos se a tecla Left Shift está pressionada
             bool estaCorrendo = Input.GetKey(KeyCode.LeftShift);
             bool estaAgachado = Input.GetKey(KeyCode.LeftControl);
 
-            // Escolhemos o som e o ritmo com base no estado (correndo ou andando)
+            
             if (estaCorrendo)
             {
-                // Se estiver correndo, usamos o som e o pitch de corrida
+                
                 somPassosSource.clip = somCorrendo;
                 somPassosSource.pitch = pitchCorrendo;
             }
             else if (estaAgachado)
             {
-                // Se não, usamos o som e o pitch de caminhada
+                
                 somPassosSource.clip = somAgachado;
                 somPassosSource.pitch = pitchAgachado;
             }
@@ -49,7 +47,7 @@ public class PassosPlayer : MonoBehaviour
                 somPassosSource.pitch = pitchAndando;
             }
 
-            // A lógica para tocar o som continua a mesma: só toca se não estiver tocando
+            
             if (!somPassosSource.isPlaying)
             {
                 somPassosSource.Play();
@@ -57,7 +55,7 @@ public class PassosPlayer : MonoBehaviour
         }
         else
         {
-            // Para o som se o jogador parar ou pular
+            
             somPassosSource.Stop();
         }
     }
