@@ -1243,7 +1243,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1970388681}
+      - m_Target: {fileID: 184785264}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: botaoVoltar
         m_Mode: 1
